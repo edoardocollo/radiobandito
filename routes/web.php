@@ -26,8 +26,10 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
+    return Inertia::render('Pages');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/page/{pageName}/{pageId}', [\App\Http\Controllers\PageController::class, 'pagesRouter'])->name('page');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

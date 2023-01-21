@@ -6,7 +6,8 @@ import DropdownLink from '@/Components/DropdownLink.vue';
 import NavLink from '@/Components/NavLink.vue';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
 import { Link } from '@inertiajs/inertia-vue3';
-
+import HeaderMobile from "@/Components/HeaderMobile.vue";
+import Jumbo from "@/Components/Jumbo.vue";
 const showingNavigationDropdown = ref(false);
 </script>
 
@@ -29,12 +30,13 @@ const showingNavigationDropdown = ref(false);
 
                             <!-- Navigation Links -->
                             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
+                                <NavLink :href="route('page', {pageName : 'Dashboard',pageId : 200})" :active="route().current('dashboard')">
                                     Dashboard
                                 </NavLink>
                             </div>
                             <div v-for="page in pages" class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
+
+                                <NavLink :href="route('page', {pageName : page.title ,pageId : page.id})">
                                     {{page.title}}
                                 </NavLink>
                             </div>
@@ -147,6 +149,8 @@ const showingNavigationDropdown = ref(false);
                     <slot name="header" />
                 </div>
             </header>
+            <HeaderMobile></HeaderMobile>
+            <Jumbo></Jumbo>
 
             <!-- Page Content -->
             <main>
@@ -163,7 +167,7 @@ export default {
         }
     },
     mounted() {
-        self = this
+        let self = this
         axios.get(route('getPages'))
             .then(function (response) {
                 self.pages = response.data

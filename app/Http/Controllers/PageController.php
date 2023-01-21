@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StorePageRequest;
 use App\Http\Requests\UpdatePageRequest;
 use App\Models\Page;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Inertia\Inertia;
 
 class PageController extends Controller
 {
@@ -120,4 +123,19 @@ class PageController extends Controller
 //
 //        }
     }
+
+    public function pagesRouter($pageName, $pageId){
+
+        return Inertia::render('Pages', [
+            'pageName' => strtolower($pageName),
+            'pageId' => strtolower($pageId)
+        ]);
+
+    }
+
+    public function getPage(Request $request){
+        $page = Page::findOrFail($request->input('id'));
+        return $page;
+    }
+
 }

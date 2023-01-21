@@ -18,7 +18,7 @@ export default {
         }
     },
     mounted() {
-        self = this
+        let self = this
         axios.get(route('getPodcasts'))
             .then(function (response) {
                 self.podcasts = response.data

@@ -2,6 +2,8 @@
 import CardProgramma from "@/Components/CardProgramma.vue";
 import Social from "@/Components/Social.vue";
 import Podcasts from "@/Components/Podcasts.vue";
+import Shows from "@/Components/Shows.vue";
+import Djs from "@/Components/Djs.vue";
 </script>
 
 <template>
@@ -9,9 +11,11 @@ import Podcasts from "@/Components/Podcasts.vue";
         <div  v-if="title" class="orange_label mt-3" :style="{'background-color': title_bgc_color, 'color': title_color}">
             <h1>{{title}}</h1>
         </div>
-        <CardProgramma v-if="isProgram" class="mt-3"></CardProgramma>
+        <CardProgramma v-if="isShow" class="mt-3"></CardProgramma>
         <Social v-if="isSocial" class="mt-3"></Social>
         <Podcasts v-if="isPodcast"></Podcasts>
+        <Shows v-if="isShows"></Shows>
+        <Djs v-if="isDjs"></Djs>
     </div>
 </template>
 <style scoped>
@@ -37,8 +41,10 @@ export default {
     props:['title', 'type', 'color'],
     data() {
         return {
-            isProgram: false,
+            isShow: false,
+            isShows: false,
             isSocial: false,
+            isDjs: false,
             bgc: null,
             title_color: null,
             title_bgc_color: null,
@@ -65,14 +71,20 @@ export default {
 
         },
         checkType: function (type) {
-            if (this.type === 'programs'){
-                this.isProgram = true
+            if (this.type === 'show'){
+                this.isShow = true
+            }
+            if (this.type === 'shows'){
+                this.isShows = true
             }
             if (this.type === 'socials'){
                 this.isSocial = true
             }
             if (this.type === 'podcasts'){
                 this.isPodcast = true
+            }
+            if (this.type === 'djs'){
+                this.isDjs = true
             }
         }
     }
