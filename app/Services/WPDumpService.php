@@ -57,6 +57,7 @@ class WPDumpService
                     ->select()
                     ->first();
             }
+
             $data = [
                 'id' => $dj->ID,
                 'post_author' => $dj->post_author,
