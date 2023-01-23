@@ -15,7 +15,7 @@ class DjController extends Controller
      */
     public function index()
     {
-        //
+        dd('djs');
     }
 
     /**

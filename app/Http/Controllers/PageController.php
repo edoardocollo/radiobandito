@@ -93,35 +93,6 @@ class PageController extends Controller
         return $pages;
     }
     public function getDataFromWP(){
-//        $pages = DB::table('radiobandito.OvASj2on_posts')->where('post_type', '=', 'page' )->get();
-//        foreach ($pages as $page){
-//            $imgId = DB::table('radiobandito.OvASj2on_postmeta')
-//                ->where('post_id', '=', $page->ID)
-//                ->where('meta_key', '=', '_thumbnail_id')
-//                ->select('meta_value')
-//                ->first();
-//            $img = null;
-//            if ($imgId && property_exists($imgId, 'meta_value')){
-//                $img = DB::table('radiobandito.OvASj2on_postmeta')
-//                    ->where('post_id', '=', $imgId->meta_value)
-//                    ->where('meta_key', '=', '_wp_attached_file')
-//                    ->select()
-//                    ->first();
-//                $img = $img;
-//            }
-//            $data = [
-//                'id' => $page->ID,
-//                'post_author' => $page->post_author,
-//                'content' => $page->post_content,
-//                'title' => $page->post_title,
-//                'status' => $page->post_status,
-//                'post_name' => $page->post_name,
-//                'img_url' => ($img)?'https://www.radiobandito.it/wp-content/uploads/'.$img->meta_value:null,
-//                'img_id' => ($imgId)?$imgId->meta_value:null,
-//            ];
-//            Page::create($data);
-//
-//        }
     }
 
     public function pagesRouter($pageName, $pageId){

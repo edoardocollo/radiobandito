@@ -15,7 +15,7 @@ class ShowController extends Controller
      */
     public function index()
     {
-        //
+        return Inertia::render('ShowsIndex');
     }
 
     /**

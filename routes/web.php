@@ -24,6 +24,12 @@ Route::get('/', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 });
+Route::get('/adminDashboard', function () {return Inertia::render('AdminDashboard');})->middleware(['auth', 'verified'])->name('adminDashboard');
+Route::get('programmi', [\App\Http\Controllers\ShowController::class, 'index'])->name('programmi');
+Route::get('djs', [\App\Http\Controllers\DjController::class, 'index'])->name('djs');
+Route::get('podcasts', [\App\Http\Controllers\PodcastController::class, 'index'])->name('podcasts');
+Route::get('eventi', [\App\Http\Controllers\EventsController::class, 'index'])->name('eventi');
+
 
 Route::get('/dashboard', function () {
     return Inertia::render('Pages');
