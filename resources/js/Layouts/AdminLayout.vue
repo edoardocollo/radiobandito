@@ -6,12 +6,13 @@ import DropdownLink from '@/Components/DropdownLink.vue';
 import NavLink from '@/Components/NavLink.vue';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
 import { Link } from '@inertiajs/inertia-vue3';
-import HeaderMobile from "@/Components/HeaderMobile.vue";
-import Jumbo from "@/Components/Jumbo.vue";
+import Modal from "@/Components/Modal.vue";
 const showingNavigationDropdown = ref(false);
 </script>
 
 <template>
+    <Modal :show="openDialog" @close="openDialog = false"></Modal>
+
     <div>
         <div class="min-h-screen bg-gray-100">
             <nav class="bg-white border-b border-gray-100">
@@ -35,7 +36,7 @@ const showingNavigationDropdown = ref(false);
                                 </NavLink>
                             </div>
                             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <NavLink :href=" route('programmi')" :active="route().current('programmi')">
+                                <NavLink :href=" route('showsIndex')" :active="route().current('programmi')">
                                     Programmi
                                 </NavLink>
                             </div>
@@ -170,4 +171,17 @@ const showingNavigationDropdown = ref(false);
         </div>
     </div>
 </template>
-<script></script>
+<script>
+export default {
+    data() {
+        return {
+            openDialog: false
+        }
+    },
+    mounted() {
+    },
+    methods: {
+    }
+}
+
+</script>

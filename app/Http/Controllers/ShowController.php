@@ -5,17 +5,17 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreShowRequest;
 use App\Http\Requests\UpdateShowRequest;
 use App\Models\Show;
+use Inertia\Inertia;
 
 class ShowController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        return Inertia::render('ShowsIndex');
+        return Inertia::render('Shows/ShowIndex');
     }
 
     /**

@@ -7,7 +7,7 @@ import CreateForm from "@/Components/CreateForm.vue";
 <template>
 
     <AdminLayout>
-        <a :href="route()">
+        <a>
             <button>create</button>
         </a>
         <List></List>
