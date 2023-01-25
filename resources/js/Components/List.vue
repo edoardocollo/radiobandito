@@ -3,7 +3,7 @@ import ShowListItem from "@/Components/ShowListItem.vue";
 </script>
 
 <template>
-    <div style="padding: 0 80px">
+    <div>
 
         <!--        List Table-->
         <table class="" style="width: 100%;">
@@ -27,7 +27,7 @@ import ShowListItem from "@/Components/ShowListItem.vue";
             </thead>
 
             <tbody class="bg-white">
-                <ShowListItem></ShowListItem>
+                <ShowListItem v-for="item in list"></ShowListItem>
             </tbody>
         </table>
     </div>
@@ -39,9 +39,23 @@ export default {
     props:['entity'],
     data() {
         return {
+            endpoint: 'getShows',
+            list:[]
         }
     },
     created() {
+        if (this.entity == 'show'){
+            this.endpoint = 'getShows'
+        }
+        let self = this
+        axios.get(route(this.endpoint))
+            .then(function (response) {
+                self.list = response.data
+                console.log(self.list)
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
 
     },
     methods: {

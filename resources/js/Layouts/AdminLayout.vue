@@ -11,8 +11,6 @@ const showingNavigationDropdown = ref(false);
 </script>
 
 <template>
-    <Modal :show="openDialog" @close="openDialog = false"></Modal>
-
     <div>
         <div class="min-h-screen bg-gray-100">
             <nav class="bg-white border-b border-gray-100">
@@ -165,7 +163,7 @@ const showingNavigationDropdown = ref(false);
                 </div>
             </header>
             <!-- Page Content -->
-            <main>
+            <main style="padding: 0 80px">
                 <slot />
             </main>
         </div>
@@ -175,7 +173,6 @@ const showingNavigationDropdown = ref(false);
 export default {
     data() {
         return {
-            openDialog: false
         }
     },
     mounted() {

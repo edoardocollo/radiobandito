@@ -1,15 +1,14 @@
 <script setup>
 import AdminLayout from "@/Layouts/AdminLayout.vue";
 import List from "@/Components/List.vue";
-import CreateForm from "@/Components/CreateForm.vue";
+import PrimaryButton from "@/Components/PrimaryButton.vue";
+import Modal from "@/Components/Modal.vue";
 </script>
-
 <template>
+    <Modal :show="openDialog"></Modal>
 
     <AdminLayout>
-        <a>
-            <button>create</button>
-        </a>
+        <PrimaryButton @click="createShow()">Nuovo</PrimaryButton>
         <List></List>
 
     </AdminLayout>
@@ -18,11 +17,13 @@ import CreateForm from "@/Components/CreateForm.vue";
 export default {
     data() {
         return {
+            openDialog: false
         }
     },
-    mounted() {
-    },
     methods: {
+        createShow : function(){
+            this.openDialog = true
+        }
     }
 }
 
