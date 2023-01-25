@@ -26,6 +26,7 @@ Route::get('/', function () {
 });
 Route::get('/adminDashboard', function () {return Inertia::render('AdminDashboard');})->middleware(['auth', 'verified'])->name('adminDashboard');
 Route::get('/showsIndex', [\App\Http\Controllers\ShowController::class, 'index'])->name('showsIndex');
+Route::post('/show/store', [\App\Http\Controllers\ShowController::class, 'store'])->name('showStore');
 Route::get('djs', [\App\Http\Controllers\DjController::class, 'index'])->name('djs');
 Route::get('podcasts', [\App\Http\Controllers\PodcastController::class, 'index'])->name('podcasts');
 Route::get('eventi', [\App\Http\Controllers\EventsController::class, 'index'])->name('eventi');

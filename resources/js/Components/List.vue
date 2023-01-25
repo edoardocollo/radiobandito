@@ -20,6 +20,12 @@ import ShowListItem from "@/Components/ShowListItem.vue";
                     Description</th>
                 <th
                     class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
+                    Status</th>
+                <th
+                    class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
+                    Img</th>
+                <th
+                    class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
                     Created_At</th>
                 <th class="px-6 py-3 text-sm text-left text-gray-500 border-b border-gray-200 bg-gray-50" colspan="3">
                     Action</th>
@@ -27,7 +33,7 @@ import ShowListItem from "@/Components/ShowListItem.vue";
             </thead>
 
             <tbody class="bg-white">
-                <ShowListItem v-for="item in list"></ShowListItem>
+                <ShowListItem v-for="item in list" :entity="item"></ShowListItem>
             </tbody>
         </table>
     </div>

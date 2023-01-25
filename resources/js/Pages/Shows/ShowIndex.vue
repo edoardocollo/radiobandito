@@ -5,11 +5,11 @@ import PrimaryButton from "@/Components/PrimaryButton.vue";
 import Modal from "@/Components/Modal.vue";
 </script>
 <template>
-    <Modal :show="openDialog"></Modal>
+    <Modal :show="openDialog" @close="openDialog = false"></Modal>
 
     <AdminLayout>
         <PrimaryButton @click="createShow()">Nuovo</PrimaryButton>
-        <List></List>
+        <List entity="shows"></List>
 
     </AdminLayout>
 </template>
@@ -19,6 +19,9 @@ export default {
         return {
             openDialog: false
         }
+    },
+    created() {
+        console.log('shows',this.shows)
     },
     methods: {
         createShow : function(){

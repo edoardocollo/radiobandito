@@ -32,11 +32,11 @@ class ShowController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \App\Http\Requests\StoreShowRequest  $request
-     * @return \Illuminate\Http\Response
      */
     public function store(StoreShowRequest $request)
     {
-        //
+        $show = Show::create($request->validated());
+        return redirect(route('showsIndex'));
     }
 
     /**
@@ -85,7 +85,7 @@ class ShowController extends Controller
     }
 
     public function getShows(){
-        $shows = Show::paginate(6)->sortByDesc('modified_at');
+        $shows = Show::all()->sortByDesc('modified_at');
         return $shows;
     }
 

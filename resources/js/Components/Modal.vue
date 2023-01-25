@@ -1,5 +1,6 @@
 <script setup>
 import { computed, onMounted, onUnmounted, watch } from 'vue';
+import ShowForm from "@/Components/Forms/ShowForm.vue";
 
 const props = defineProps({
     show: {
@@ -57,6 +58,7 @@ const maxWidthClass = computed(() => {
         '2xl': 'sm:max-w-2xl',
     }[props.maxWidth];
 });
+
 </script>
 
 <template>
@@ -91,7 +93,9 @@ const maxWidthClass = computed(() => {
                         class="mb-6 bg-white rounded-lg overflow-hidden shadow-xl transform transition-all sm:w-full sm:mx-auto"
                         :class="maxWidthClass"
                     >
-                        <slot v-if="show" />
+                        <!--                        FORM-->
+                        <ShowForm></ShowForm>
+                        <!--                        FORM-->
                     </div>
                 </transition>
             </div>

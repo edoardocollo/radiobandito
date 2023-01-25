@@ -5,22 +5,29 @@
     <tr>
         <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
             <div class="flex items-center">
-                3
+                {{entity.id}}
             </div>
 
         </td>
 
         <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-            <div class="text-sm leading-5 text-gray-900">Create CURD with NodeJS
+            <div class="text-sm leading-5 text-gray-900">
+                {{entity.title}}
             </div>
         </td>
 
         <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+            <p v-html="entity.content"></p>
+        </td>
+        <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+            <p>{{entity.status}}</p>
+        </td>
+        <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+            <p>{{entity.img_url}}</p>
         </td>
 
         <td class="px-6 py-4 text-sm leading-5 text-gray-500 whitespace-no-wrap border-b border-gray-200">
-            <span>12/12/22</span>
+            <span>{{ entity.created_at }}</span>
         </td>
 
         <td class="text-sm font-medium leading-5 text-center whitespace-no-wrap border-b border-gray-200 ">
@@ -59,6 +66,9 @@
 </style>
 <script>
 export default {
+    props:[
+        'entity'
+    ],
     data() {
         return {
         }
