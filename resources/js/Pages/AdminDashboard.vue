@@ -6,12 +6,13 @@ import CreateForm from "@/Components/CreateForm.vue";
 
 <template>
 
-    <AdminLayout>
+    <AdminLayout :errors="errors">
 
     </AdminLayout>
 </template>
 <script>
 export default {
+    props:['errors'],
     data() {
         return {
         }

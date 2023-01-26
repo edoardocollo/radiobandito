@@ -26,16 +26,16 @@
                                         <input type="text" name="title" id="title" class="block w-full flex-1 rounded-none rounded-r-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="titolo...">
                                     </div>
                                 </div>
-                                <div v-if="errors.title" class="text-red-600">{{errors.title}}</div>
+                                <div v-if="form.errors.title" class="text-red-600">{{form.errors.title}}</div>
                             </div>
 
 <!--                            name-->
                             <div>
-                                <label for="content" class="block text-sm font-medium text-gray-700">Contenuto</label>
+                                <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
                                 <div class="mt-1">
-                                    <textarea id="content" name="content" rows="3" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="descrizione...."></textarea>
+                                    <textarea id="description" name="description" rows="3" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="descrizione...."></textarea>
                                 </div>
-                                <div v-if="errors.content" class="text-red-600">{{errors.content}}</div>
+                                <div v-if="form.errors.description" class="text-red-600">{{form.errors.description}}</div>
                                 <p class="mt-2 text-sm text-gray-500">Inserisci qui dentro una descrizione del programma</p>
                             </div>
 
@@ -90,14 +90,10 @@
 import {useForm} from "@inertiajs/inertia-vue3";
 
 export default {
-    props:{
-        errors:''
-    },
     setup(){
         const form = useForm({
             title:'',
             content:'',
-            errors:''
         })
         return {form}
     },

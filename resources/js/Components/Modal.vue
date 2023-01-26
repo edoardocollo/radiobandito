@@ -102,3 +102,18 @@ const maxWidthClass = computed(() => {
         </transition>
     </teleport>
 </template>
+<script>
+import {useForm} from "@inertiajs/inertia-vue3";
+
+export default {
+    data() {
+        return {
+        }
+    },
+    mounted() {
+    },
+    methods: {
+    }
+}
+
+</script>

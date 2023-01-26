@@ -5,7 +5,7 @@ import PrimaryButton from "@/Components/PrimaryButton.vue";
 import Modal from "@/Components/Modal.vue";
 </script>
 <template>
-    <Modal :show="openDialog" @close="openDialog = false"></Modal>
+    <Modal :show="openDialog"  @close="openDialog = false"></Modal>
 
     <AdminLayout>
         <PrimaryButton @click="createShow()">Nuovo</PrimaryButton>
@@ -17,7 +17,7 @@ import Modal from "@/Components/Modal.vue";
 export default {
     data() {
         return {
-            openDialog: false
+            openDialog: false,
         }
     },
     created() {

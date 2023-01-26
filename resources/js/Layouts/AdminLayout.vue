@@ -171,6 +171,7 @@ const showingNavigationDropdown = ref(false);
 </template>
 <script>
 export default {
+    props:['errors'],
     data() {
         return {
         }
