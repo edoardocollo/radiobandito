@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreShowRequest;
 use App\Http\Requests\UpdateShowRequest;
 use App\Models\Show;
+use http\Env\Request;
 use Inertia\Inertia;
 
 class ShowController extends Controller

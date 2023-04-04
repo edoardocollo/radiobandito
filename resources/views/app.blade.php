@@ -18,5 +18,29 @@
     </head>
     <body class="font-sans antialiased">
         @inertia
+        <div class="radioplayer"
+             data-src="<em><strong>https://s2.radio.co/s8add5b3eb/listen</strong></em>"
+             data-autoplay="false"
+             data-playbutton="true"
+             data-volumeslider="true"
+             data-elapsedtime="true"
+             data-nowplaying="true"
+             data-showplayer="true"
+             data-volume="50"
+             data-showartwork="false">
+        </div>
+
     </body>
+    <!-- Include the libraries -->
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://public.radio.co/playerapi/jquery.radiocoplayer.min.js"></script>
+    <script>
+        (function($) {
+            //initialise the plugin with the element
+            $('.radioplayer').radiocoPlayer();
+        })(jQuery);
+
+
+    </script>
+
 </html>

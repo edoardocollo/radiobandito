@@ -1,10 +1,8 @@
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head } from '@inertiajs/inertia-vue3';
-import HeaderMobile from "@/Components/HeaderMobile.vue";
-import Player from "@/Components/Player.vue";
-import Jumbo from "@/Components/Jumbo.vue";
 import Section from "@/Components/Section.vue";
+// import AudioPlayer from "@/Components/AudioPlayer.vue";
 </script>
 
 <template>
@@ -14,9 +12,11 @@ import Section from "@/Components/Section.vue";
 
         <div v-if="pageName == 'dashboard'">
 
+<!--            <AudioPlayer></AudioPlayer>-->
             <Section title="Ora In Onda" type="show" color="black"></Section>
             <Section title="Social" type="socials" color="black"></Section>
             <Section title="Podcast" type="podcasts" color="orange"></Section>
+
         </div>
         <div v-else-if="pageName == 'programmi'">
             <Section :title="pageName" type="shows" color="orange"></Section>
